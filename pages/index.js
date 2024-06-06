@@ -1,8 +1,6 @@
-import styles from "./index.module.css"
-
-export default function IndexPage() {
+export default function HomePage() {
     return (
-        <div className={styles.index}>
+        <div>
             <h1>Hello world!</h1>
         </div>
     )
