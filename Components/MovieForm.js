@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
-
+import Link from 'next/link';
 import MoviesAPI from '../lib/movies';
 
 const defaultMovie = {
@@ -41,17 +41,15 @@ export default function PostForm({ movieToEdit = null }) {
             setError(true)
             return
         }
-
+        console.log("Trying to create the movie: " + JSON.stringify(movie))
         setIsLoading(true)
         if (movie.id) {
             const updatedMovie = await MoviesAPI.update(movie, movie.id)
-            console.log(movie)
             setMovie(updatedMovie)
-            router.push(`/films/${movie.id}`)
+            router.push(`/movies/${movie.id}`)
         } else {
-            console.log("Trying to create the movie: " + JSON.stringify(movie))
             const newMovie = await MoviesAPI.create(movie)
-            router.push(`/movies/${newMovie.id}`)
+            router.push(`/`)
         }
         setIsLoading(false)
     }

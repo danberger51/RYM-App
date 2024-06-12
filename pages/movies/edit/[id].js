@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import MovieForm from "../../../Components/MovieForm"
 import { useEffect, useState } from 'react';
 import MoviesAPI from '../../../lib/movies';
+import Link from 'next/link';
 
 export default function EditMovie() {
 
@@ -26,6 +27,7 @@ export default function EditMovie() {
         <>
             <h1>Edit Movie</h1>
             <MovieForm movieToEdit={movie} />
+            <button ><Link className="button" href={`/movies/${movie.id}`}>Back</Link></button >
         </>
     );
 }

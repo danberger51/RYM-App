@@ -25,6 +25,9 @@ export default function movieDetail() {
     return (
         <div >
             <div>
+                {
+                    console.log(movie)
+                }
                 <h1>{movie.title}</h1>
                 <p>{movie.description}</p>
                 <p>{movie.director}</p>
@@ -32,9 +35,9 @@ export default function movieDetail() {
             </div>
 
             <div >
-                <Link className="button" href={`/`}>Back</Link>
-                <Link className="button" href={`edit/${movie.id}`}>Edit</Link>
-                <Link className="button" onClick={handleDelete} href={`/`}>Delete</Link>
+                <button><Link className="button" href={`/`}>Back</Link></button>
+                <button><Link className="button" href={`edit/${movie.id}`}>Edit</Link></button>
+                <button><Link className="button" onClick={handleDelete} href={`/`}>Delete</Link></button>
             </div>
 
         </div>
