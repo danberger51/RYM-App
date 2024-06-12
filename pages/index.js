@@ -1,13 +1,27 @@
-export default function HomePage() {
+import React from "react";
+import MoviesAPI from "../lib/movies";
+import Movie from "../Components/Movie"
+import Link from "next/link";
+
+export default function HomePage({ movies }) {
+    const inseratURL = '/movies/'
     return (
         <div>
-            <h1>Hello world!</h1>
+            {movies.map((movie) => {
+                return (
+                    <div key={`inserat-${movie.id_movie}`}>
+                        <div>
+                            <Movie props={movie} />
+                        </div>
+                    </div>
+                )
+            })}
         </div>
     )
 }
-export async function getStaticProps(context) {
-    const movies = await moviesAPI.findAll();
+export async function getServerSideProps(context) {
+    const movies = await MoviesAPI.findAll();
     return {
-        props: { movies }, revalidate: 10
+        props: { movies }
     };
 }
