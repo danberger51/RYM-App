@@ -5,3 +5,9 @@ export default function HomePage() {
         </div>
     )
 }
+export async function getStaticProps(context) {
+    const movies = await moviesAPI.findAll();
+    return {
+        props: { movies }, revalidate: 10
+    };
+}
