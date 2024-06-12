@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export default function Movie({ props }) {
-    const MovieURL = `/films/`
+    const MovieURL = `/movies/`
     return (
         <div>
             <h1>{props.title}</h1>

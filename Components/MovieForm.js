@@ -19,8 +19,9 @@ export default function PostForm({ movieToEdit = null }) {
 
     useEffect(() => {
         if (movieToEdit !== null) {
-            setPost(movieToEdit)
+            setMovie(movieToEdit)
         }
+        console.log(movie)
     }, [movieToEdit])
 
     const handleChange = (e) => {
@@ -28,7 +29,7 @@ export default function PostForm({ movieToEdit = null }) {
         const name = e.target.name
         const text = e.target.value
         setMovie({
-            ...post,
+            ...movie,
             ...{ [name]: text }
         })
     }
@@ -43,12 +44,14 @@ export default function PostForm({ movieToEdit = null }) {
 
         setIsLoading(true)
         if (movie.id) {
-            const updatedMovie = await MoviesAPI.update(movie)
+            const updatedMovie = await MoviesAPI.update(movie, movie.id)
+            console.log(movie)
             setMovie(updatedMovie)
             router.push(`/films/${movie.id}`)
         } else {
+            console.log("Trying to create the movie: " + JSON.stringify(movie))
             const newMovie = await MoviesAPI.create(movie)
-            router.push(`/films/${newMovie.id}`)
+            router.push(`/movies/${newMovie.id}`)
         }
         setIsLoading(false)
     }

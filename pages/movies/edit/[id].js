@@ -7,30 +7,25 @@ import MoviesAPI from '../../../lib/movies';
 export default function EditMovie() {
 
     const router = useRouter()
-    const [movie, setMovie] = useState(null)
+    const [movie, setMovie] = useState([])
 
     const urlID = router.query.id
 
     useEffect(() => {
-        let isMounted = true
-
-        if (!router.isReady) return
-
-        const loadMovie = async () => {
-            const movie = await MoviesAPI.read(urlID)
-            if (isMounted) {
-                setMovie(movie)
+        const getMovie = async () => {
+            if (!router.isReady) {
+                return
             }
+            const response = await MoviesAPI.findById(router.query.id)
+            setMovie(response[0])
         }
-        loadMovie()
-
-        return () => isMounted = false
-    }, [router])
+        getMovie()
+    }, [router.isReady]);
 
     return (
         <>
             <h1>Edit Movie</h1>
-            <MovieForm movie={movie} />
+            <MovieForm movieToEdit={movie} />
         </>
     );
 }
