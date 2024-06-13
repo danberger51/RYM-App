@@ -1,6 +1,6 @@
 /* Layout.module.css */
 
-:root {
+/*/:root {
     --primary-color: #4CAF50;
     --secondary-color: #f0f0f0;
     --font-color: #333;
@@ -9,7 +9,7 @@
     --button-font-color: white;
     --header-bg-color: #333;
     --header-font-color: white;
-  }
+  }/*/
   
   body {
     margin: 0;
