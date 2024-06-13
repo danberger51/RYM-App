@@ -6,7 +6,7 @@ export default function Layout({ children }) {
         <>
             <header className={styles.header} >
                 <Image
-                    src=""
+                    src="/logo.png"
                     alt="Logo RYM"
                     width={160}
                     height={60}
