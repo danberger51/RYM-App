@@ -1,33 +1,18 @@
-/* Layout.module.css */
-
-/*/:root {
-    --primary-color: #4CAF50;
-    --secondary-color: #f0f0f0;
-    --font-color: #333;
-    --button-bg-color: #4CAF50;
-    --button-hover-bg-color: #45a049;
-    --button-font-color: white;
-    --header-bg-color: #333;
-    --header-font-color: white;
-  }/*/
-  
-  body {
+/* Define a class for the body styles */
+.body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: var(--secondary-color);
     color: var(--font-color);
   }
   
+  /* Define other classes */
   .header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--header-bg-color);
     padding: 20px;
-  }
-  
-  .header img {
-    display: block;
   }
   
   .container {
