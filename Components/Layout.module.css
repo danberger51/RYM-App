@@ -1,128 +1,13 @@
-/* Define a class for the body styles */
-.body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: var(--secondary-color);
-    color: var(--font-color);
-  }
-  
-  /* Define other classes */
-  .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--header-bg-color);
-    padding: 20px;
-  }
-  
-  .container {
-    padding: 20px;
-  }
-  
-  h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    margin: 10px 0;
-  }
-  
-  button {
-    background-color: var(--button-bg-color);
-    border: none;
-    color: var(--button-font-color);
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    margin: 10px 5px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: var(--button-hover-bg-color);
-  }
-  
-  button a {
-    color: var(--button-font-color);
-    text-decoration: none;
-  }
-  
-  form {
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  form div {
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-  }
-  
-  input[type="text"],
-  input[type="number"],
-  textarea {
+.header {
+    position: sticky;
+    top: 0;
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  textarea {
-    resize: vertical;
-  }
-  
-  .error {
-    color: red;
-    font-weight: bold;
-  }
-  
-  .movie {
-    background-color: white;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .movie h1 {
-    font-size: 20px;
-  }
-  
-  .movie p {
-    margin: 5px 0;
-  }
-  
-  hr {
-    border: 0;
-    height: 1px;
-    background-color: #ccc;
-  }
-  
-  nav {
+    box-shadow: 0 6px 10px rgb(0 0 0 / 40%);
     display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--header-bg-color);
-    padding: 10px;
-  }
-  
-  nav a {
-    color: var(--header-font-color);
-    text-decoration: none;
-    margin: 0 15px;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
+    background-color: #c4c4c4;
+    z-index: 99;
+    flex-direction: row;
+    height: 80px;
+    line-height: 80px;
+
+}

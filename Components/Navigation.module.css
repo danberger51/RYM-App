@@ -1,0 +1,48 @@
+/* Navigation.module.css */
+
+
+
+
+
+.navigation ul {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation ul li {
+    margin: 0 10px;
+}
+
+.button {
+    background-color: #0f93b4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 1.5;
+    position:sticky;
+    
+}
+
+.button:hover {
+    background-color: #0c728d;
+    transform: scale(1.05);
+}
+
+.button:active {
+    background-color: #095f6b;
+    transform: scale(0.95);
+}
+
+.navigation {
+    margin-left: 1100px;
+    position: fixed;
+}

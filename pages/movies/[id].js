@@ -1,8 +1,10 @@
-import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
-import MoviesAPI from '../../lib/movies';
-import Link from 'next/link';
-import styles from './Layout.module.css';
+// MovieDetail.js
+
+import MoviesAPI from "../../lib/movies";
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import styles from "./MovieDetail.module.css";
 
 export default function MovieDetail() {
     const router = useRouter();
@@ -15,30 +17,38 @@ export default function MovieDetail() {
 
     useEffect(() => {
         const getMovie = async () => {
-            if (!router.isReady) return;
+            if (!router.isReady) {
+                return;
+            }
             const response = await MoviesAPI.findById(router.query.id);
-            setMovie(response);
+            setMovie(response[0]);
         };
         getMovie();
     }, [router.isReady]);
 
     return (
         <div className={styles.container}>
-            {movie && (
-                <>
-                    <div>
-                        <h1>{movie.title}</h1>
-                        <p>{movie.description}</p>
-                        <p>{movie.director}</p>
-                        <p>{movie.year}</p>
-                    </div>
-                    <div>
-                        <button><Link href={`/`}>Back</Link></button>
-                        <button><Link href={`/movies/edit/${movie.id}`}>Edit</Link></button>
-                        <button onClick={handleDelete}>Delete</button>
-                    </div>
-                </>
-            )}
+            <div className={styles.movieInfo}>
+                <h1>{movie.title}</h1>
+                <p><strong>Description:</strong> {movie.description}</p>
+                <p><strong>Director:</strong> {movie.director}</p>
+                <p><strong>Year:</strong> {movie.year}</p>
+            </div>
+
+            <div className={styles.buttonContainer}>
+                <Link href={`/`}><p className={styles.button}>Back</p></Link>
+                <Link href={`edit/${movie.id}`}><p className={styles.button}>Edit</p></Link>
+                <button className={styles.button} onClick={handleDelete}>Delete</button>
+            </div>
         </div>
     );
+}
+
+export async function getServerSideProps(context) {
+    const movie = await MoviesAPI.findById(context.params.id);
+    return {
+        props: {
+            movie,
+        },
+    };
 }

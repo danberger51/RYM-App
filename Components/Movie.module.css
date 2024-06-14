@@ -1,0 +1,60 @@
+/* Movie.module.css */
+
+.drinks {
+    background-color: #f0f8ff; /* Light blue background */
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #0f93b4; /* Accent color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 80%; /* Breite auf 80% des Containers setzen */
+    max-width: 600px; /* Maximalbreite festlegen */
+    text-align: center;
+    margin: 20px auto; /* Zentrieren auf der Seite */
+}
+
+.drinksTitle {
+    color: #0f93b4; /* Standard Titelfarbe */
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button {
+    background-color: #0f93b4; /* Hintergrundfarbe des Buttons */
+    color: white; /* Textfarbe des Buttons */
+    padding: 10px 20px; /* Innenabstand des Buttons */
+    border: none; /* Kein Rahmen */
+    border-radius: 5px; /* Abgerundete Ecken */
+    margin-top: 10px; /* Abstand nach oben */
+    text-decoration: none; /* Keine Unterstreichung für den Button-Link */
+    cursor: pointer; /* Zeiger Cursor */
+    transition: background-color 0.3s ease; /* Übergangseffekt für die Hintergrundfarbe */
+    display: inline-block; /* Inline-Block-Element */
+}
+
+.button:hover {
+    background-color: #0c728d; /* Hintergrundfarbe ändern bei Hover */
+}
+
+.pageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 20px;
+}
+
+.button:hover {
+    color: #ffffff;
+    background-color: #5f89f2;
+    border-color: #5f89f2;
+}
+

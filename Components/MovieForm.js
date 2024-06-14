@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link';
 import MoviesAPI from '../lib/movies';
+import styles from "./MovieForm.module.css"
 
 const defaultMovie = {
     "title": "",
@@ -54,7 +55,7 @@ export default function PostForm({ movieToEdit = null }) {
         setIsLoading(false)
     }
     return (
-        <div>
+        <div className={styles['form-container-styling']}>
             <form onSubmit={handleSubmit}>
                 <div>
                     {error && <p>fields can not be empty</p>}
@@ -81,10 +82,10 @@ export default function PostForm({ movieToEdit = null }) {
                         <input onChange={handleChange} value={movie.year} type="number" name="year" id="year" placeholder="year" />
                     </div>
                 </div>
-
-                <button className={"button"} disabled={isLoading}>
+                <div className={styles.buttonContainer}><button className={styles.button} disabled={isLoading}>
                     {isLoading ? "...is lading" : "Submit"}
-                </button>
+                </button></div>
+                
             </form>
         </div>
     )

@@ -1,0 +1,89 @@
+/* MovieForm.module.css */
+
+.form-container-styling {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Center items vertically */
+    margin-top: 20px;
+}
+
+.button {
+    background-color: #0f93b4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #0c728d;
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+/* Adjust the form input and label spacing */
+.div {
+    margin-bottom: 10px;
+}
+
+.label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input,
+.textarea {
+    width: 300%; /* Make the input and textarea fields full width */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 8px;
+    box-sizing: border-box;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+.movie-info {
+    margin-bottom: 20px;
+}
+
+.movie-info h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.movie-info p {
+    margin: 5px 0;
+    color: #555555;
+}

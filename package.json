@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
+  "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -14,6 +14,7 @@
   "license": "ISC",
   "dependencies": {
     "next": "^14.2.3",
+    "next.js": "^1.0.3",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   }
